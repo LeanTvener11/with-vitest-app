@@ -8,6 +8,7 @@ import { mockTextImageProps } from '../Components/TextImage/TextImage.mock';
 import { mockNavigationCardsProps } from '../Components/NavigationCards/NavigationCards.mock';
 import ImageWithLink from '../Components/ImageWithLink/ImageWithLink';
 import { mockImageWithLinkProps } from '../Components/ImageWithLink/ImageWithLink.mock';
+import DataDisplay from '../Components/DataDisplay/DataDisplay';
 
 export default function TestPage() {
 
@@ -34,6 +35,11 @@ export default function TestPage() {
             {...mockFormProps}
           />
         </div>
+
+        <div className="mb-16">
+          <DataDisplay />
+        </div>
+
         <div className="container mx-auto px-4">
           <ImageWithLink
             {...mockImageWithLinkProps}

@@ -1,11 +1,11 @@
 export const mockFormProps = {
-  namePlaceholder: "Enter your full name",
-  emailPlaceholder: "Enter your email address", 
+  namePlaceholder: "Enter your name",
+  emailPlaceholder: "Enter your email",
   headline: "Contact Us",
-  text: "Fill out the form below and we'll get back to you as soon as possible.",
+  text: "Fill out the form below",
   buttonLabel: "Submit",
-  nameErrorText: "Please enter your name",
-  emailErrorText: "Please enter a valid email address"
+  nameErrorText: "Name is required",
+  emailErrorText: "Please enter a valid email"
 };
 export const mockFormInputs = {
   validInputs: {

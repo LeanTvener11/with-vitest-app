@@ -41,7 +41,14 @@ const Form: FC<FormProps> = ({
     setStatus('loading');
     
     try {
-      const response = await fetch('https://api.example.com/data');
+      const response = await fetch('https://api.example.com/data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email }),
+      });
+      
       if (!response.ok) {
         throw new Error('Failed to submit form');
       }
