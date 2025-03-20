@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [ react()],
   test: {
     environment: "jsdom",
-    setupFiles: './vitetest.testconfig.ts',
+    setupFiles: ['./vitetest.testconfig.ts',],
     globals: true,
     css: true,
   },
