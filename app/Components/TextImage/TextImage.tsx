@@ -17,7 +17,7 @@ export interface TextImageProps {
 
 const TextImage: FC<TextImageProps> = ({ text, linkUrl, linkText, image, reverse = false }) => {
   return (
-    <div className={`flex flex-row items-center gap-8 ${reverse ? 'flex-row-reverse' : ''}`}>
+    <div className={` my-16 flex flex-row items-center gap-8 ${reverse ? 'flex-row-reverse' : ''}`}>
       <div className="flex-1">
         <div className="flex flex-col gap-6">
           <p className="text-lg">{text}</p>

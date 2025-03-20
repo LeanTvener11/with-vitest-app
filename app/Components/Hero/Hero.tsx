@@ -1,4 +1,5 @@
-import { FC } from 'react';
+'use client';
+import { FC, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,6 +11,9 @@ interface HeroProps {
 }
 
 const Hero: FC<HeroProps> = ({ image, headline, linkUrl, linkText }) => {
+  const [buttonTextIndex, setButtonTextIndex] = useState(0);
+
+  const buttonTexts = ["Get Started", "Aaaaaaawww", "Dont Press that hard", "No thanks", "Oh great now Im broken"];
 
   return (
     <div className="relative w-full h-[500px]" data-testid="hero">
@@ -27,12 +31,12 @@ const Hero: FC<HeroProps> = ({ image, headline, linkUrl, linkText }) => {
         </h1>
         }
         {linkUrl && linkText &&
-          <Link
-            href={linkUrl}
+          <button
+            onClick={() => setButtonTextIndex((prevIndex) => Math.min(prevIndex + 1, buttonTexts.length - 1))}
             className="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors"
           >
-            {linkText}
-          </Link>
+            {buttonTexts[buttonTextIndex]}
+          </button>
         }
       </div>
     </div>
