@@ -7,7 +7,11 @@ export default defineConfig({
   plugins: [ react()],
   test: {
     environment: "jsdom",
-    setupFiles: './vitetest.testconfig.ts',
+    setupFiles: ['./vitetest.testconfig.ts',],
+  coverage: {
+			include: ['app/**/*.{ts,tsx}'],
+			all: true,
+		},
     globals: true,
     css: true,
   },
