@@ -9,6 +9,7 @@ export const handlers = [
       ctx.json({ message: 'Form submitted successfully' })
     )
   }),
+  // create a mock for the pokemon api get request using the
 
 ]
 
