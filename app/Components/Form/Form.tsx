@@ -11,6 +11,7 @@ interface FormProps {
   buttonLabel: string;
   nameErrorText: string;
   emailErrorText: string;
+  successMessage: string;
 }
 
 const Form: FC<FormProps> = ({
@@ -20,7 +21,8 @@ const Form: FC<FormProps> = ({
   text,
   buttonLabel,
   nameErrorText,
-  emailErrorText
+  emailErrorText,
+  successMessage
 }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -115,7 +117,7 @@ const Form: FC<FormProps> = ({
           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
           </svg>
-          <span>Successfully submitted!</span>
+          <span>{successMessage}</span>
         </div>
       )}
 

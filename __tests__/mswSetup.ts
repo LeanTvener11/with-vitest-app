@@ -1,20 +1,20 @@
 import { setupServer } from 'msw/node'
-import { rest } from 'msw'
+
+import { http, HttpResponse } from 'msw'
 
 export const handlers = [
-  rest.post('https://api.example.com/data', async (req, res, ctx) => {
+  http.post('https://api.example.com/data', async () => {
     // Simulate successful response
-    return res(
-      ctx.status(200),
-      ctx.json({ message: 'Form submitted successfully' })
+    return HttpResponse.json({
+      success: true,
+      message: 'Data received successfully',
+    },
+    { status: 200 }
     )
-  }),
-  // create a mock for the pokemon api get request using the
-
+  })
 ]
 
 export const server = setupServer(...handlers)
-
 
 //response object pokemon
 // const pokemonResponse = {
@@ -26,11 +26,3 @@ export const server = setupServer(...handlers)
 // }
 
 
-// Start server before all tests
-// beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
-
-// // Reset handlers after each test
-// afterEach(() => server.resetHandlers())
-
-// // Close server after all tests
-// afterAll(() => server.close())

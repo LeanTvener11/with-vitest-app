@@ -5,7 +5,8 @@ export const mockFormProps = {
   text: "Fill out the form below",
   buttonLabel: "Submit",
   nameErrorText: "Name is required",
-  emailErrorText: "Please enter a valid email"
+  emailErrorText: "Please enter a valid email",
+  successMessage: "Successfully submitted!"
 };
 export const mockFormInputs = {
   validInputs: {
