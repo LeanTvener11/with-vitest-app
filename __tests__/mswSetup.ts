@@ -10,6 +10,17 @@ export const handlers = [
     },
     { status: 200 }
     )
+  }),
+  http.get('https://pokeapi.co/api/v2/pokemon/hypno', async () => {
+    return HttpResponse.json({
+      name: 'hypno',
+      weight: 75,
+      sprites: {
+        front_default: 'testurl.png'
+      }
+    },
+    { status: 200 }
+  )
   })
 ]
 

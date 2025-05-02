@@ -17,7 +17,7 @@ describe('Form', () => {
 })
 
 describe('Form Inputs', () => {
-  it.todo('validates inputs correctly', async () => {
+  it('validates inputs correctly', async () => {
     const user = userEvent.setup()
     render(<Form {...mockFormProps} />)
 
@@ -35,11 +35,19 @@ describe('Form Inputs', () => {
     expect(await screen.findByText(mockFormProps.successMessage)).toBeVisible()
   })
     
-    it.todo("handles errors from server correctly", async () => {
+    it("handles errors from server correctly", async () => {
         //overwrite the success handler
-        // server.use(
-
-        // )
+        server.use(
+      http.post('https://api.example.com/data', async () => {
+            // Simulate successful response
+            return HttpResponse.json({
+            success: false,
+            message: 'server error',
+            },
+            { status: 500 }
+            )
+        })
+        )
 
         const user = userEvent.setup()
         render(<Form {...mockFormProps} />)
@@ -56,14 +64,3 @@ describe('Form Inputs', () => {
         expect(await screen.findByText(mockFormProps.errorMessage)).toBeVisible()
     })
 })
-
-//Here is some help with the error handling to overwrite the success handler
-        //     http.post('https://api.example.com/data', async () => {
-        //     // Simulate successful response
-        //     return HttpResponse.json({
-        //     success: false,
-        //     message: 'server error',
-        //     },
-        //     { status: 500 }
-        //     )
-        // })
