@@ -12,6 +12,7 @@ interface FormProps {
   nameErrorText: string;
   emailErrorText: string;
   successMessage: string;
+  errorMessage: string;
 }
 
 const Form: FC<FormProps> = ({
@@ -22,7 +23,8 @@ const Form: FC<FormProps> = ({
   buttonLabel,
   nameErrorText,
   emailErrorText,
-  successMessage
+  successMessage,
+  errorMessage
 }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -126,7 +128,7 @@ const Form: FC<FormProps> = ({
           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
-          <span>Something went wrong. Please try again.</span>
+          <span>{errorMessage}</span>
         </div>
       )}
     </div>
